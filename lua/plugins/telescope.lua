@@ -5,7 +5,7 @@ local function findFilesInConfig()
 end
 
 local keys = {
-	{ "<releader>/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Current Buffer search" },
+	{ "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Current Buffer search" },
 	{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
 	{ "<leader>fd", "<cmd>Telescope find_files<cr>", desc = "Find All Files (Curr Working Dir)" },
 	{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Search Help Tags" },
