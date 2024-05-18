@@ -47,51 +47,6 @@ return {
 
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-		local keymap = vim.keymap
-
-		vim.api.nvim_create_autocmd("LspAttach", {
-			group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-			callback = function(args)
-				vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-
-				local opts = { buffer = args.buf, silent = true }
-
-				opts.desc = "Go to declaration"
-				keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-
-				opts.desc = "Show LSP references"
-				keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
-
-				opts.desc = "Show LSP definition"
-				keymap.set("n", "gd", "<cmd>Telescope lsp_definition<CR>", opts)
-
-				opts.desc = "Show LSP type definition"
-				keymap.set("n", "gt", "<cmd>Telescope lsp_type_definition<CR>", opts)
-
-				opts.desc = "Smart Rename"
-				keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
-
-				opts.desc = "Show code actions"
-				keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-
-				opts.desc = "Show documentation"
-				keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
-				opts.desc = "Restart LSP"
-				keymap.set("n", "<leader>rs", "<cmd>:LspRestart<CR>", opts)
-
-				-- Diagnostics (jumping to warnings)
-				opts.desc = "Show line diagnostics"
-				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-
-				opts.desc = "Go to next diagnostics"
-				keymap.set("n", "[d", vim.diagnostic.goto_next)
-
-				opts.desc = "Go to prev diagnostics"
-				keymap.set("n", "]d", vim.diagnostic.goto_prev)
-			end,
-		})
-
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		mason_lspconfig.setup_handlers({
