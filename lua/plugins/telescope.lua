@@ -1,3 +1,4 @@
+-- turn this into a command to search for files in the nvim config
 local function findFilesInConfig()
 	local builtin = require("telescope.builtin")
 	builtin.find_files({ cwd = vim.fn.stdpath("config") })
@@ -12,6 +13,7 @@ local keys = {
 	{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find Word (Current Working Dir" },
 	{ "<leader>fw", "<cmd>Telescope grep_string<cr>", desc = "Find Word Under Cursor" },
 	{ "<leader>mc", findFilesInConfig, desc = "Search Files Nvim Config" },
+	{ "<leader>r", "<cmd>Telescope old_files<cr>", desc = "Search Recent Files" },
 }
 
 local config = function()
@@ -46,7 +48,7 @@ end
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.6",
-	lazy = true,
+	lazy = false,
 	dependencies = {
 		{ "nvim-lua/plenary.nvim" },
 		{
