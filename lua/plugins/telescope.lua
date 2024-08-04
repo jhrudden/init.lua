@@ -13,7 +13,7 @@ local keys = {
 	{ "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Find Word (Current Working Dir" },
 	{ "<leader>fw", "<cmd>Telescope grep_string<cr>", desc = "Find Word Under Cursor" },
 	{ "<leader>mc", findFilesInConfig, desc = "Search Files Nvim Config" },
-	{ "<leader>r", "<cmd>Telescope old_files<cr>", desc = "Search Recent Files" },
+	{ "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Resume Past Telescope Search" },
 }
 
 local config = function()

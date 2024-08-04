@@ -12,7 +12,7 @@ return {
 				},
 				delete_to_trash = true,
 				view_options = {
-					show_hidden = false,
+					show_hidden = true,
 				},
 			})
 			vim.keymap.set("n", "<leader>-", oil.toggle_float, { desc = "Open parent dir in floating window" })
