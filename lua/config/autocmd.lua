@@ -34,10 +34,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 
 		opts.desc = "Show LSP definition"
-		vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definition<CR>", opts)
+		vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
 		opts.desc = "Show LSP type definition"
-		vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definition<CR>", opts)
+		vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
 		opts.desc = "Smart Rename"
 		vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
